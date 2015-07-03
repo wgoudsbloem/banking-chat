@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link data-require="bootstrap@*" data-semver="3.2.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+  <script data-require="jquery@2.0.3 current" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script data-require="bootstrap@*" data-semver="3.2.0" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+  <script data-require="angular.js@*" data-semver="1.3.0-rc2" src="https://code.angularjs.org/1.3.0-rc.2/angular.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="TxtParser.js"></script>
+  <script src="controllers.js"></script>
+  <script src="directives.js"></script>
+  <script src="services.js"></script>
+  <title>script-parser</title>
+</head>
+
+<body ng-app="parserDemo" ng-controller="indexCtrl">
+  <br />
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon">@</span>
+    <input ng-model="user" class="form-control" placeholder="Username">
+    <span class="input-group-btn">
+          <button ng-click="login()" class="btn btn-primary">{{logStatus}}</button>
+        </span>
+  </div>
+  <br />
+  <form>
+    <textarea class="form-control" rows="10" data-show-tail>{{message}}</textarea>
+    <br />
+    <div class="input-group">
+      <input ng-model="txtIn" class="form-control" placeholder="type your message here" />
+      <span class="input-group-btn">
+          <button ng-click="send()" class="btn btn-success">send</button>
+        </span>
+    </div>
+    <br/>
+    <div>{{json}}</div>
+  </form>
+  
+  <div>
+    <h3>Instructions</h3>
+    <lu>
+      <li>eter username and press login</li>
+      <li>type a message to send to receiver (this is a demo without a server</li>
+      <li>send the receiver money by typing: @BANK send $10 to @john from savings account</li>
+    </lu>
+    <p></p>
+  </div>
+  
+</body>
+
+</html>
